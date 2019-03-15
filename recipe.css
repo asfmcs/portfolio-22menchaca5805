@@ -1,0 +1,14 @@
+body { background-color:rgb(209, 101, 29);
+  }
+ /* I like this color */
+ #recepiehead {font-family: 'Oswald', sans-serif;}
+table, th, td {
+  border: 5px solid peachpuff;
+}
+p {font-family: 'Oswald', sans-serif;
+  font-size: 30px;}
+
+  h2 {font-family: 'Oswald', sans-serif;
+  font-size: 30px;}
+  li {font-family: 'Oswald', sans-serif;
+  font-size: 30px;}

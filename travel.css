@@ -1,0 +1,35 @@
+body {
+  background-color:rgb(255,218,185)
+}
+h1 {background-color:aquamarine;
+   font-family: 'Oswald', sans-serif;
+ }
+h2 {background-color:aquamarine;
+font-family: 'Oswald', sans-serif }
+p {
+  font-size: 20px;
+  line-height: 1.8;
+  font-family: 'Oswald', sans-serif;
+  background-color: aquamarine;
+  color: black;
+  padding: 10px;
+  text-align: left;
+}
+ol {font-size: 20px
+;background-color: lightblue;
+  color: black;
+  padding: 10px;
+  text-align: left;}
+ul {font-size: 20px;
+background-color: lightblue;
+  color: black;
+  padding: 10px;
+  text-align: left;}
+#cuisine { background-color: lightblue;
+  color: black;
+  padding: 10px;
+  text-align: left; }
+  h3 {background-color: lightblue;
+  color: black;
+  padding: 10px;
+  text-align: left;}
