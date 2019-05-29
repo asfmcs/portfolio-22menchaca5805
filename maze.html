@@ -1,0 +1,235 @@
+
+<html>
+<head>
+<title>Pacman game</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Pacman game</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    var pink = "#FFC0CB";
+var sizeX = getWidth();
+var sizeY = getHeight();
+var center2X = 50;
+var center2Y = 150;
+var HEAD_RADIUS = 28;
+var BODY_WIDTH = HEAD_RADIUS * 2;
+var BODY_HEIGHT = 32;
+var NUM_FEET = 3;
+var FOOT_RADIUS = (BODY_WIDTH) / (NUM_FEET * 2); 
+
+
+var PUPIL_RADIUS = 3.2;
+var PUPIL_LEFT_OFFSET = 4.6;
+var PUPIL_RIGHT_OFFSET = 8;
+var EYE_RADIUS = 8;
+var EYE_OFFSET = 6;
+
+function start(){
+    
+    
+var canvas = new Rectangle(sizeX, sizeY);
+canvas.setPosition(0,0);
+canvas.setColor(Color.black);
+add(canvas);
+	var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    drawCanvas();
+    drawGhost(center2X + 300 ,center2Y- 50, Color.red);
+    drawGhost(center2X,center2Y- 50, Color.cyan);
+    drawGhost(center2X + 100,center2Y- 50, pink);
+    drawGhost(center2X + 200,center2Y- 50 , Color.orange);
+    drawPacman();
+
+}
+function drawPacman(){
+ var myArc = new Arc(60, 30, 330, 0);
+myArc.setPosition(center2X+50, center2Y+150);
+myArc.setColor(Color.yellow);
+add(myArc);
+/*var myArc = new Arc(100, 330, 30, 0);
+myArc.setPosition(100, 200);
+myArc.setColor(Color.black);
+add(myArc);*/
+
+var myArc = new Arc(5, 0, 359, 0);
+myArc.setPosition(center2X+ 110, center2Y+ 150);
+myArc.setColor(Color.yellow);
+add(myArc);
+var myArc = new Arc(5, 0, 359, 0);
+myArc.setPosition(center2X+ 160,center2Y+ 150);
+myArc.setColor(Color.yellow);
+add(myArc);
+var myArc = new Arc(5, 0, 359, 0);
+myArc.setPosition(center2X+ 260,center2Y+ 150);
+myArc.setColor(Color.yellow);
+add(myArc);
+var myArc = new Arc(5, 0, 359, 0);
+myArc.setPosition(center2X+ 310,center2Y+ 150);
+myArc.setColor(Color.yellow);
+add(myArc);
+var myArc = new Arc(5, 0, 359, 0);
+myArc.setPosition(center2X+ 310,center2Y+ 200);
+myArc.setColor(Color.yellow);
+add(myArc);
+var myArc = new Arc(5, 0, 359, 0);
+myArc.setPosition(center2X+ 310,center2Y+ 100);
+myArc.setColor(Color.yellow);
+add(myArc);
+var myArc = new Arc(5, 0, 359, 0);
+myArc.setPosition(center2X+ 310,center2Y+ 250);
+myArc.setColor(Color.yellow);
+add(myArc);
+var myArc = new Arc(5, 0, 359, 0);
+myArc.setPosition(center2X+ 310,center2Y+ 50);
+myArc.setColor(Color.yellow);
+add(myArc);
+var myArc = new Arc(5, 0, 359, 0);
+myArc.setPosition(center2X+ 310,center2Y+ 300);
+myArc.setColor(Color.yellow);
+add(myArc);
+var myArc = new Arc(5, 0, 359, 0);
+myArc.setPosition(center2X+ 210, center2Y+ 150);
+myArc.setColor(Color.yellow);
+add(myArc);
+}
+
+function drawCanvas(){
+var canvas = new Rectangle(sizeX, sizeY);
+canvas.setPosition(0,0);
+canvas.setColor(Color.black);
+add(canvas);
+	var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    var line = new Line(center2X-40,center2Y-100,center2X-40,center2Y);
+line.setColor(Color.blue);
+line.setLineWidth(5);
+add(line);
+var line = new Line(center2X+340,center2Y-100,center2X+340,center2Y);
+line.setColor(Color.blue);
+line.setLineWidth(5);
+add(line);
+var line = new Line(center2X-40,center2Y,center2X+340,center2Y);
+line.setColor(Color.blue);
+line.setLineWidth(5);
+add(line);
+var line = new Line(center2X-40,center2Y-100,center2X+340,center2Y-100);
+line.setColor(Color.blue);
+line.setLineWidth(5);
+add(line);
+var line = new Line(center2X-40,center2Y+240,center2X+245,center2Y+240);
+line.setColor(Color.blue);
+line.setLineWidth(5);
+add(line);
+var line = new Line(center2X-40,center2Y+80,center2X+245,center2Y+80);
+line.setColor(Color.blue);
+line.setLineWidth(5);
+add(line);
+var line = new Line(center2X+245,center2Y+10,center2X+245,center2Y+80);
+line.setColor(Color.blue);
+line.setLineWidth(5);
+add(line);
+var line = new Line(center2X+245,center2Y+240,center2X+245,center2Y+350);
+line.setColor(Color.blue);
+line.setLineWidth(5);
+add(line);
+}
+
+
+function drawGhost(centerX, centerY, color){
+    ghostHead(centerX, centerY, color);
+    ghostBody(centerX, centerY, color);
+    ghostFeet(centerX, centerY, color);
+    drawEyes(centerX, centerY);
+    drawPupils(centerX, centerY);
+}
+
+function ghostHead(centerX, centerY, color){
+    var circle = new Circle(HEAD_RADIUS);
+    circle.setPosition(centerX, centerY);
+    circle.setColor(color);
+    add(circle);
+}
+
+function ghostBody(centerX, centerY, color){
+    var rect = new Rectangle(BODY_WIDTH, BODY_HEIGHT);
+    rect.setPosition(centerX - BODY_WIDTH / 2, centerY);
+    rect.setColor(color);
+    add(rect);
+}
+
+function ghostFeet(centerX, centerY, color){
+    for(var i = 0; i < NUM_FEET; i++){
+        var circle = new Circle(FOOT_RADIUS);
+        circle.setPosition(centerX - (FOOT_RADIUS * 2) + (FOOT_RADIUS * 2 * i), centerY + BODY_HEIGHT);
+        circle.setColor(color);
+        add(circle);
+    }
+}
+
+function drawEyes(centerX, centerY){
+    var circle = new Circle(EYE_RADIUS);
+    circle.setPosition(centerX + EYE_RADIUS + EYE_OFFSET / 2, centerY);
+    circle.setColor(Color.white);
+    add(circle);
+    
+    var circle = new Circle(EYE_RADIUS);
+    circle.setPosition(centerX - EYE_OFFSET, centerY);
+    circle.setColor(Color.white);
+    add(circle);
+}
+
+function drawPupils(centerX, centerY){
+    var circle = new Circle(PUPIL_RADIUS);
+    circle.setPosition(centerX - PUPIL_LEFT_OFFSET, centerY);
+    circle.setColor(Color.blue);
+    add(circle);
+    
+    var circle = new Circle(PUPIL_RADIUS);
+    circle.setPosition(centerX + PUPIL_LEFT_OFFSET + PUPIL_RADIUS * EYE_OFFSET / PUPIL_RADIUS, centerY);
+    circle.setColor(Color.blue);
+    add(circle);
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

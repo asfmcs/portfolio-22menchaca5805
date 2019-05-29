@@ -1,0 +1,102 @@
+
+<html>
+<head>
+<title>Gold Medal design</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/a818e45667427600634e9e44b17902f1a5d48243/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Gold Medal design</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start(){
+var circle =new Circle(80);
+circle.setPosition (300, 150);
+circle.setColor(Color.grey);
+add(circle);
+var circle =new Circle(80);
+circle.setPosition (200, 300);
+circle.setColor(Color.yellow);
+add(circle);
+var circle =new Circle(80);
+circle.setPosition (100, 150);
+circle.setColor(Color.orange);
+add(circle);
+var rect = new Rectangle(35,75);
+rect.setPosition (290, 0);
+rect.setColor(Color.red);
+add(rect);
+var rect = new Rectangle(30,75);
+rect.setPosition (285, 0);
+rect.setColor(Color.white);
+add(rect);
+var rect = new Rectangle(10,75);
+rect.setPosition (280, 0);
+rect.setColor(Color.blue);
+add(rect);
+var rect = new Rectangle(35,225);
+rect.setPosition (190, 0);
+rect.setColor(Color.red);
+add(rect);
+var rect = new Rectangle(30,225);
+rect.setPosition (185, 0);
+rect.setColor(Color.white);
+add(rect);
+var rect = new Rectangle(10,225);
+rect.setPosition (180, 0);
+rect.setColor(Color.blue);
+add(rect);
+var rect = new Rectangle(35,75);
+rect.setPosition (90, 0);
+rect.setColor(Color.red);
+add(rect);
+var rect = new Rectangle(30,75);
+rect.setPosition (85, 0);
+rect.setColor(Color.white);
+add(rect);
+var rect = new Rectangle(10,75);
+rect.setPosition (80, 0);
+rect.setColor(Color.blue);
+add(rect);
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
